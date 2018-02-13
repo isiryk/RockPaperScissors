@@ -1,3 +1,5 @@
+<h1> Simple Tetris </h1>
+
 I decided to follow a youtube series to make my own tetris.
 
 Here is the beginning for the tutorials: https://www.youtube.com/watch?v=Z3wvP27eW98
