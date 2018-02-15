@@ -5,15 +5,18 @@
  */
 
 //Declares the canvas, input, and content variables
-var canvas, input, content;
+var canvas;
+var input;
+var content;
 (function(){
     //Creates the canvas with a function
     canvas = (function(){
         //Var c is 
         var c = {},
             //Gets the element
-            frame = document.getElementByTageName("canvas")[0],
+            frame = document.getElementsByTagName("canvas")[0],
             _fctx = frame.getContext("2d");
+            
             view = document.createElement("canvas"),
             ctx = view.getContext("2d");
             
@@ -30,20 +33,20 @@ var canvas, input, content;
         c.ctx = ctx;
         
         c.flip = function() {
-            _fctx.clearRect(0,0, _fw, _fh);
+            _fctx.clearRect(0, 0, _fw, _fh);
             _fctx.drawImage(this.view, 0, 0, _fw, _fh);
             
-            this.ctx.clearRect(0,0,_vw,_vh);
+            this.ctx.clearRect(0, 0, _vw, _vh);
         };
         
         //Defines what width is as well as gives a setter and getter
         Object.defineProperty(c, "width", {
             set: function(w) {
-                this.view.width = w;
-                this.scale=_scale;
+                    this.view.width = w;
+                    this.scale = _scale;
             },
-            get: function(){
-                return _vw;
+            get: function() {
+                    return _vw;
             }
         });
         
@@ -69,8 +72,8 @@ var canvas, input, content;
                 _fh = this.frame.height = _vh * s;
                 //This is so it doesnt screw up in a browser
                 _fctx["imageSmoothingEnabled"] = false;
-                ["o","ms","moz","webkit"].foreach(function(v){
-                    _fctx[v + "ImageSmoothingEnabled"] = false;
+                ["o", "ms", "moz", "webkit"].forEach(function(v) {
+                        _fctx[v + "ImageSmoothingEnabled"] = false;
                 });
             },
             get: function(){
