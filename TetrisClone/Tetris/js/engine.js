@@ -53,7 +53,7 @@ var content;
         //Defines what height is
         Object.defineProperty(c, "height", {
             set: function(h) {
-                this.view.width = h;
+                this.view.height = h;
                 this.scale=_scale;
             },
             get: function(){
